@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Outer Sans';
+  src: url('assets/fonts/outer-sans.otf') format('opentype');
+  /* Cambia la ruta y el formato según la fuente que estés usando */
+  /* Puedes agregar otras propiedades como font-weight y font-style si es necesario */
+}
+
+body {
+  background-color: black;
+  font-family: "Outer Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
+}

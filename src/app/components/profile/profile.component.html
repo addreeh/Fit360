@@ -1,0 +1,46 @@
+<div class="mt-20">
+  <div class="container mx-auto py-8">
+    <div class="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
+      <div class="col-span-4 sm:col-span-3">
+        <div class="border-2 border-[#d6fd51] bg-[#333333] shadow rounded-lg p-6">
+          <div class="flex flex-col items-center">
+            <img *ngIf="user?.picture" src="{{user?.picture}}"
+              class="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0 border-2 border-[#d6fd51]">
+
+            <img>
+            <h1 class="text-xl font-bold text-white">{{user?.name}} {{user?.surname}}</h1>
+          </div>
+          <hr class="my-6 border-t border-[#d6fd51]">
+          <div class="flex flex-col">
+            <span class="text-white uppercase font-bold tracking-wider mb-2">Info</span>
+            <ul>
+              <li class="mb-2 text-gray-200"><span class="text-gray-400">Username<span class="text-[#d6fd51]"> ➜ </span>
+                </span>&#64;{{user?.username}}</li>
+              <li class="mb-2 text-gray-200"><span class="text-gray-400">Email<span class="text-[#d6fd51]"> ➜ </span>
+                </span>{{user?.email}}</li>
+              <li class="mb-2 text-gray-200"><span class="text-gray-400">Joined<span class="text-[#d6fd51]"> ➜ </span>
+                </span>{{user?.joinDate}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-4 sm:col-span-9">
+        <div class="bg-[#333333] border border-[#d6fd51] shadow rounded-lg p-6">
+          <div class="space-y-20">
+            <div class="border-b border-gray-900/10">
+
+              <ng-container *ngIf="type === 'edit'">
+                <app-edit></app-edit>
+              </ng-container>
+              <ng-container *ngIf="type === 'routines'">
+                <app-user-routines></app-user-routines>
+              </ng-container>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-error *ngIf="showErrorAlert" [error]="'Check your credentials and try again.'" />

@@ -1,0 +1,5 @@
+/* Estilo para el enlace con aria-current="page" */
+a[aria-current="page"] {
+  color: #d6fd51;
+  /* Agrega otros estilos según tus preferencias */
+}

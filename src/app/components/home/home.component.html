@@ -1,0 +1,86 @@
+<div class="flex w-full h-screen relative">
+  <div class="blursito flex-1 flex items-center justify-center w-screen h-screen absolute">
+    <div class="text-white">
+      <!-- <p class="text-[40px] pe-40 w-9/12">Create and share your gym
+        routines</p> -->
+      <p class="text-[45px] pe-40 w-9/12">CREATE AND SHARE YOUR GYM ROUTINES</p>
+      <br>
+      <button type="button"
+        class="text-black bg-[#d6fd51] hover:bg-[#bddd49] focus:ring-4 focus:outline-none focus:ring-[#d6fd51] font-medium rounded-full text-sm px-4 py-2 text-center dark:bg-[#d6fd51] dark:hover:bg-[#bddd49] dark:focus:ring-[#d6fd51]">Let's
+        Try It</button>
+    </div>
+  </div>
+  <div class="flex-1">
+    <img class="h-screen float-right" src="assets/banner.webp">
+  </div>
+</div>
+
+<!-- <p class="text-lg moving-text">★ Craft, Share, Conquer and Elevate Fitness ★ Sweat Together, Achieve Forever Fit ★
+    Build, Share,
+    Thrive ➜ Gym Harmony ★ Explore, Create, Excel, and Reach New Heights ★ Work Together, Achieve Lasting Wellness ★
+    Cultivate, Collaborate, Prosper ➜ Fitness Unity ★ ★ Innovate, Collaborate, Dominate, and Elevate Performance ★ Train
+    Together, Succeed Together ★ Construct, Connect, Prosper ➜ Athletic Synchrony ★ Dream, Design, Dominate, and Rise
+    to the Challenge ★ Sweat Together, Thrive Together ★ Build, Bond, Flourish ➜ Fitness Fusion ★</p> -->
+
+<div class="banner">
+  <div class="horizontal-scrolling-items">
+
+    <div class="horizontal-scrolling-items__item">
+      Build, Share,
+      Thrive ➜ Gym Harmony ★ Explore, Create, Excel, and Reach New Heights ★ Work Together, Achieve Lasting Wellness ★
+      Cultivate, Collaborate, Prosper ➜ Fitness Unity ★ </div>
+
+    <div class="horizontal-scrolling-items__item">
+      Innovate, Collaborate, Dominate, and Elevate Performance ★ Train
+      Together, Succeed Together ★ Construct, Connect, Prosper ➜ Athletic Synchrony ★ Dream, Design, Dominate, and Rise
+      to the Challenge ★ Sweat Together, Thrive Together ★ Build, Bond, Flourish ➜ Fitness Fusion ★ </div>
+
+  </div>
+
+</div>
+
+<div class="w-screen bg-black h-10 mt-14 mb-24">
+  <p class="text-5xl text-white pl-20">EXPLORE THE BEST EXERCISES</p>
+  <div class="flex items-center justfy-center pt-4 px-14">
+    <!-- <app-exercise-card *ngFor="let i of [0, 1, 2]"/> -->
+    <app-exercise-card [title]="'MUSCLES BUILDING'" [imageSrc]="'assets/card1.webp'"
+      [text]="'Make smart exercise choices to ensure muscle mass gains.'" [url]="'/exercises'">
+    </app-exercise-card>
+    <app-dynamic-card />
+    <app-exercise-card [title]="'ROUTINES CREATORS'" [imageSrc]="'assets/card2.webp'"
+      [text]="'Take a look at our routines and try them out.'" [url]="'/routines'">
+    </app-exercise-card>
+  </div>
+</div>
+
+<br>
+<section class="mt-96 w-full bg-[#242424]">
+  <div class="px-4 mx-auto max-w-screen-xl grid lg:grid-cols-2 gap-8 py-10">
+    <div>
+      <img class="mx-auto w-full lg:max-w-xl h-64 rounded-lg sm:h-96 shadow-xl" src="assets/banner2.webp"
+        alt="YouTube video player" />
+    </div>
+    <div class="flex flex-col justify-center">
+      <h1
+        class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
+        CREATE AND SHARE YOUR ROUTINES</h1>
+      <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Here at Flowbite we focus on
+        markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+      <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0">
+        <a href="/register"
+          class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-black rounded-lg bg-[#d6fd51] hover:bg-[#242424] hover:text-white hover:border-2 border-[#d6fd51]">
+          CREATE YOURS
+          <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9" />
+          </svg>
+        </a>
+        <a href="/routines"
+          class="inline-flex justify-center items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-gray-900 rounded-lg border border-[#d6fd51] hover:bg-[#d6fd51] focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-[#d6fd51] dark:hover:bg-[#d6fd51] dark:focus:ring-gray-800 dark:hover:text-black">
+          Learn more
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

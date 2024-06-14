@@ -1,0 +1,29 @@
+<div class="w-[380px] h-[430px] border rounded-lg shadow bg-[#242424] border-[#d6fd51] flex-1">
+  <a href="#">
+    <img class="rounded-t-lg" [src]="imageSrc" alt="" />
+  </a>
+  <div class="p-5">
+    <a href="#">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{title}}</h5>
+    </a>
+    <p class="mb-3 font-normal text-gray-400">{{ text }}</p>
+    <div class="flex items-center justify-between">
+      <a href="{{ url }}"
+        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg hover:bg-[#d6fd51] bg-[#242424] hover:text-black hover:bg-[#d6fd51]">
+        LEARN MORE
+        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 5h12m0 0L9 1m4 4L9 9" />
+        </svg>
+      </a>
+      <span
+        class="p-2 rounded-full bg-blue-700 hover:bg-[#bddd49] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm text-center dark:bg-[#d6fd51] dark:focus:ring-blue-800 cursor-pointer"><svg
+          xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 64 64" id="lightning">
+          <path
+            d="M29.695 38l-6.661 24.74 1.776.845 26-36L50 26H37.166l3.823-24.848-1.831-.69-23 36L17 38h12.695zm8.596-32.468l-3.279 21.316L36 28h12.044l-21.66 29.991 5.582-20.731L31 36H18.826L38.291 5.532z"
+            fill="black"></path>
+        </svg></span>
+    </div>
+  </div>
+</div>

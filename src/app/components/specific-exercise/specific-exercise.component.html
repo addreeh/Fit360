@@ -1,0 +1,37 @@
+<div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-10 md:mt-16">
+  <div
+    [ngClass]="{'flex-row-reverse': currentRoute === '/pull'  || currentRoute === '/arms', 'flex-row': currentRoute === '/push'  || currentRoute === '/legs'}"
+    class="-m-1 flex flex-wrap md:-m-2">
+    <div class="flex w-1/2 flex-wrap">
+      <div class="w-1/2 p-1 md:p-2">
+        <img alt="gallery" class="block h-full w-full rounded-lg object-cover object-center"
+          src="data:image/jpg;base64,{{exercises[0].picture}}" />
+      </div>
+      <div class="w-1/2 p-1 md:p-2">
+        <img alt="gallery" class="block h-full w-full rounded-lg object-cover object-center"
+          src="data:image/jpg;base64,{{exercises[1].picture}}" />
+      </div>
+      <div class="w-full p-1 md:p-2">
+        <img alt="gallery" class="block h-full w-full rounded-lg object-cover object-center"
+          src="data:image/jpg;base64,{{exercises[2].picture}}" />
+      </div>
+    </div>
+    <div class="flex w-1/2 flex-wrap p-10">
+      <ol class="relative border-s border-gray-200 dark:border-gray-700">
+        <li class="mb-20 ms-6" *ngFor="let exercise of exercises">
+          <span
+            class="absolute flex items-center justify-center w-6 h-6 bg-[#d6fd51] rounded-full -start-3 ring-8 ring-gray-700">
+            <img class="p-1" src={{exercise.svg}}>
+          </span>
+          <h3 class="flex items-center mb-5 text-lg font-semibold text-white">{{exercise.name}}<span
+              *ngIf="exercise.difficulty === 3"
+              class="bg-[#d6fd51] text-gray-600 text-sm font-medium me-2 px-2.5 py-0.5 rounded ms-3">Difficult</span>
+          </h3>
+          <!-- <time class="block mb-2 text-sm font-normal leading-none text-gray-500">Released on January
+            13th, 2022</time> -->
+          <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{{exercise.description}}</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>

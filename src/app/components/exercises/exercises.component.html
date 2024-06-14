@@ -1,0 +1,427 @@
+<!-- *ngFor="let exercise of exercises" [exercise]="exercise" -->
+<div class="pt-20 mx-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+  <div class="grid gap-4">
+    <div class="h-[{{exercises[0].height}}px] relative group flex flex-col min-h-44"
+      style="min-height: fit-content; overflow: auto;">
+      <span
+        class="w-full p-4 text-black opacity-0 group-hover:opacity-100 absolute h-full rounded-lg transition-all duration-300 backdrop-blur-lg overflow-hidden flex flex-col justify-between">
+        <h6 class="uppercase text-lg font-bold text-black">{{exercises[0].name}}</h6>
+        <div class="mb-5">
+          <div
+            class="inline-block mb-2 ms-[calc({{getMarginPercentage(exercises[0].difficulty)}}-1.25rem)] py-0.5 px-1.5 bg-[#242424] border border-[#d6fd51] text-xs font-medium text-[#d6fd51] rounded-lg">
+            {{ exercises[0].difficulty === 3 ? 'Difficult' : (exercises[0].difficulty === 2 ? 'Medium' : 'Easy') }}
+          </div>
+          <div class="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar"
+            [attr.aria-valuenow]="exercises[0].difficulty === 3 ? 75 : (exercises[0].difficulty === 2 ? 50 : 25)"
+            aria-valuemin="0" aria-valuemax="100">
+            <div
+              class="flex flex-col justify-center rounded-full overflow-hidden bg-[#d6fd51] text-xs text-white text-center whitespace-nowrap transition duration-500"
+              [style.width]="exercises[0].difficulty === 3 ? '75%' : (exercises[0].difficulty === 2 ? '50%' : '25%')">
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <mark class="px-2 text-gray-100 bg-[#d6fd51] rounded">{{exercises[0].muscleGroup}}</mark>
+          <span>Exercise</span>
+          <a [href]="'/' + exercises[0].muscleGroup.toLowerCase()">
+            <button type="button"
+              class="ml-8 text-black bg-[#d6fd51] hover:bg-[#bddd49] font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 text-center">
+              Go To {{exercises[0].muscleGroup}}
+            </button>
+          </a>
+        </div>
+      </span>
+      <img class="h-full w-full rounded-lg" src="data:image/jpg;base64,{{exercises[0].picture}}"
+        alt="{{exercises[0].name}}">
+    </div>
+
+
+
+
+    <div class="h-[{{exercises[4].height}}px] relative group flex flex-col min-h-44">
+      <span
+        class="w-full p-4 text-black opacity-0 group-hover:opacity-100 absolute h-full rounded-lg transition-all duration-300 backdrop-blur-lg overflow-hidden flex flex-col justify-between">
+        <h6 class="uppercase text-lg font-bold text-black">{{exercises[4].name}}</h6>
+        <div class="mb-5">
+          <div
+            class="inline-block mb-2 ms-[calc({{getMarginPercentage(exercises[4].difficulty)}}-1.25rem)] py-0.5 px-1.5 bg-[#242424] border border-[#d6fd51] text-xs font-medium text-[#d6fd51] rounded-lg">
+            {{ exercises[4].difficulty === 3 ? 'Difficult' : (exercises[4].difficulty === 2 ? 'Medium' : 'Easy') }}
+          </div>
+          <div class="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar"
+            [attr.aria-valuenow]="exercises[4].difficulty === 3 ? 75 : (exercises[4].difficulty === 2 ? 50 : 25)"
+            aria-valuemin="0" aria-valuemax="100">
+            <div
+              class="flex flex-col justify-center rounded-full overflow-hidden bg-[#d6fd51] text-xs text-white text-center whitespace-nowrap transition duration-500"
+              [style.width]="exercises[4].difficulty === 3 ? '75%' : (exercises[4].difficulty === 2 ? '50%' : '25%')">
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <mark class="px-2 text-gray-100 bg-[#d6fd51] rounded">{{exercises[4].muscleGroup}}</mark>
+          <span>Exercise</span>
+          <a [href]="'/' + exercises[4].muscleGroup.toLowerCase()">
+            <button type="button"
+              class="ml-8 text-black bg-[#d6fd51] hover:bg-[#bddd49] font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 text-center">
+              Go To {{exercises[4].muscleGroup}}
+            </button>
+          </a>
+        </div>
+      </span>
+      <img class="h-full w-full rounded-lg" src="data:image/jpg;base64,{{exercises[4].picture}}"
+        alt="{{exercises[4].name}}">
+    </div>
+
+
+    <div class="h-[{{exercises[8].height}}px] relative group flex flex-col min-h-44">
+      <span
+        class="w-full p-4 text-black opacity-0 group-hover:opacity-100 absolute h-full rounded-lg transition-all duration-300 backdrop-blur-lg overflow-hidden flex flex-col justify-between">
+        <div>
+          <h6 class="uppercase text-lg font-bold text-black">{{exercises[8].name}}</h6>
+          <div class="mb-5">
+            <div
+              class="inline-block mb-2 ms-[calc({{getMarginPercentage(exercises[8].difficulty)}}-1.25rem)] py-0.5 px-1.5 bg-[#242424] border border-[#d6fd51] text-xs font-medium text-[#d6fd51] rounded-lg">
+              {{ exercises[8].difficulty === 3 ? 'Difficult' : (exercises[8].difficulty === 2 ? 'Medium' : 'Easy') }}
+            </div>
+            <div class="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar"
+              [attr.aria-valuenow]="exercises[8].difficulty === 3 ? 75 : (exercises[8].difficulty === 2 ? 50 : 25)"
+              aria-valuemin="0" aria-valuemax="100">
+              <div
+                class="flex flex-col justify-center rounded-full overflow-hidden bg-[#d6fd51] text-xs text-white text-center whitespace-nowrap transition duration-500"
+                [style.width]="exercises[8].difficulty === 3 ? '75%' : (exercises[8].difficulty === 2 ? '50%' : '25%')">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <mark class="px-2 text-gray-100 bg-[#d6fd51] rounded">{{exercises[8].muscleGroup}}</mark>
+          <span>Exercise</span>
+          <a [href]="'/' + exercises[8].muscleGroup.toLowerCase()">
+            <button type="button"
+              class="ml-8 text-black bg-[#d6fd51] hover:bg-[#bddd49] font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 text-center">
+              Go To {{exercises[8].muscleGroup}}
+            </button>
+          </a>
+        </div>
+      </span>
+      <img class="h-full w-full rounded-lg" src="data:image/jpg;base64,{{exercises[8].picture}}"
+        alt="{{exercises[8].name}}">
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="grid gap-4">
+    <div class="h-[{{exercises[1].height}}px] relative group flex flex-col min-h-44">
+      <span
+        class="w-full p-4 text-black opacity-0 group-hover:opacity-100 absolute h-full rounded-lg transition-all duration-300 backdrop-blur-lg overflow-hidden flex flex-col justify-between">
+        <h6 class="uppercase text-lg font-bold text-black">{{exercises[1].name}}</h6>
+        <div class="mb-5">
+          <div
+            class="inline-block mb-2 ms-[calc({{getMarginPercentage(exercises[1].difficulty)}}-1.25rem)] py-0.5 px-1.5 bg-[#242424] border border-[#d6fd51] text-xs font-medium text-[#d6fd51] rounded-lg">
+            {{ exercises[1].difficulty === 3 ? 'Difficult' : (exercises[1].difficulty === 2 ? 'Medium' : 'Easy') }}
+          </div>
+          <div class="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar"
+            [attr.aria-valuenow]="exercises[1].difficulty === 3 ? 75 : (exercises[1].difficulty === 2 ? 50 : 25)"
+            aria-valuemin="0" aria-valuemax="100">
+            <div
+              class="flex flex-col justify-center rounded-full overflow-hidden bg-[#d6fd51] text-xs text-white text-center whitespace-nowrap transition duration-500"
+              [style.width]="exercises[1].difficulty === 3 ? '75%' : (exercises[1].difficulty === 2 ? '50%' : '25%')">
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <mark class="px-2 text-gray-100 bg-[#d6fd51] rounded">{{exercises[1].muscleGroup}}</mark>
+          <span>Exercise</span>
+          <a [href]="'/' + exercises[1].muscleGroup.toLowerCase()">
+            <button type="button"
+              class="ml-8 text-black bg-[#d6fd51] hover:bg-[#bddd49] font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 text-center">
+              Go To {{exercises[1].muscleGroup}}
+            </button>
+          </a>
+        </div>
+      </span>
+      <img class="h-full w-full rounded-lg" src="data:image/jpg;base64,{{exercises[1].picture}}"
+        alt="{{exercises[1].name}}">
+    </div>
+
+
+
+
+    <div class="h-[{{exercises[5].height}}px] relative group flex flex-col min-h-44">
+      <span
+        class="w-full p-4 text-black opacity-0 group-hover:opacity-100 absolute h-full rounded-lg transition-all duration-300 backdrop-blur-lg overflow-hidden flex flex-col justify-between">
+        <h6 class="uppercase text-lg font-bold text-black">{{exercises[5].name}}</h6>
+        <div class="mb-5">
+          <div
+            class="inline-block mb-2 ms-[calc({{getMarginPercentage(exercises[5].difficulty)}}-1.25rem)] py-0.5 px-1.5 bg-[#242424] border border-[#d6fd51] text-xs font-medium text-[#d6fd51] rounded-lg">
+            {{ exercises[5].difficulty === 3 ? 'Difficult' : (exercises[5].difficulty === 2 ? 'Medium' : 'Easy') }}
+          </div>
+          <div class="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar"
+            [attr.aria-valuenow]="exercises[5].difficulty === 3 ? 75 : (exercises[5].difficulty === 2 ? 50 : 25)"
+            aria-valuemin="0" aria-valuemax="100">
+            <div
+              class="flex flex-col justify-center rounded-full overflow-hidden bg-[#d6fd51] text-xs text-white text-center whitespace-nowrap transition duration-500"
+              [style.width]="exercises[5].difficulty === 3 ? '75%' : (exercises[5].difficulty === 2 ? '50%' : '25%')">
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <mark class="px-2 text-gray-100 bg-[#d6fd51] rounded">{{exercises[5].muscleGroup}}</mark>
+          <span>Exercise</span>
+          <a [href]="'/' + exercises[5].muscleGroup.toLowerCase()">
+            <button type="button"
+              class="ml-8 text-black bg-[#d6fd51] hover:bg-[#bddd49] font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 text-center">
+              Go To {{exercises[5].muscleGroup}}
+            </button>
+          </a>
+        </div>
+      </span>
+      <img class="h-full w-full rounded-lg" src="data:image/jpg;base64,{{exercises[5].picture}}"
+        alt="{{exercises[5].name}}">
+    </div>
+
+
+
+    <div class="h-[{{exercises[9].height}}px] relative group flex flex-col min-h-44">
+      <span
+        class="w-full p-4 text-black opacity-0 group-hover:opacity-100 absolute h-full rounded-lg transition-all duration-300 backdrop-blur-lg overflow-hidden flex flex-col justify-between">
+        <h6 class="uppercase text-lg font-bold text-black">{{exercises[9].name}}</h6>
+        <div class="mb-5">
+          <div
+            class="inline-block mb-2 ms-[calc({{getMarginPercentage(exercises[9].difficulty)}}-1.25rem)] py-0.5 px-1.5 bg-[#242424] border border-[#d6fd51] text-xs font-medium text-[#d6fd51] rounded-lg">
+            {{ exercises[9].difficulty === 3 ? 'Difficult' : (exercises[9].difficulty === 2 ? 'Medium' : 'Easy') }}
+          </div>
+          <div class="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar"
+            [attr.aria-valuenow]="exercises[9].difficulty === 3 ? 75 : (exercises[9].difficulty === 2 ? 50 : 25)"
+            aria-valuemin="0" aria-valuemax="100">
+            <div
+              class="flex flex-col justify-center rounded-full overflow-hidden bg-[#d6fd51] text-xs text-white text-center whitespace-nowrap transition duration-500"
+              [style.width]="exercises[9].difficulty === 3 ? '75%' : (exercises[9].difficulty === 2 ? '50%' : '25%')">
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <mark class="px-2 text-gray-100 bg-[#d6fd51] rounded">{{exercises[9].muscleGroup}}</mark>
+          <span>Exercise</span>
+          <a [href]="'/' + exercises[9].muscleGroup.toLowerCase()">
+            <button type="button"
+              class="ml-8 text-black bg-[#d6fd51] hover:bg-[#bddd49] font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 text-center">
+              Go To {{exercises[9].muscleGroup}}
+            </button>
+          </a>
+        </div>
+      </span>
+      <img class="h-full w-full rounded-lg" src="data:image/jpg;base64,{{exercises[9].picture}}"
+        alt="{{exercises[9].name}}">
+    </div>
+  </div>
+
+
+  <div class="grid gap-4">
+    <div class="h-[{{exercises[2].height}}px] relative group flex flex-col min-h-44">
+      <span
+        class="w-full p-4 text-black opacity-0 group-hover:opacity-100 absolute h-full rounded-lg transition-all duration-300 backdrop-blur-lg overflow-hidden flex flex-col justify-between">
+        <h6 class="uppercase text-lg font-bold text-black">{{exercises[2].name}}</h6>
+        <div class="mb-5">
+          <div
+            class="inline-block mb-2 ms-[calc({{getMarginPercentage(exercises[2].difficulty)}}-1.25rem)] py-0.5 px-1.5 bg-[#242424] border border-[#d6fd51] text-xs font-medium text-[#d6fd51] rounded-lg">
+            {{ exercises[2].difficulty === 3 ? 'Difficult' : (exercises[2].difficulty === 2 ? 'Medium' : 'Easy') }}
+          </div>
+          <div class="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar"
+            [attr.aria-valuenow]="exercises[2].difficulty === 3 ? 75 : (exercises[2].difficulty === 2 ? 50 : 25)"
+            aria-valuemin="0" aria-valuemax="100">
+            <div
+              class="flex flex-col justify-center rounded-full overflow-hidden bg-[#d6fd51] text-xs text-white text-center whitespace-nowrap transition duration-500"
+              [style.width]="exercises[2].difficulty === 3 ? '75%' : (exercises[2].difficulty === 2 ? '50%' : '25%')">
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <mark class="px-2 text-gray-100 bg-[#d6fd51] rounded">{{exercises[2].muscleGroup}}</mark>
+          <span>Exercise</span>
+          <a [href]="'/' + exercises[2].muscleGroup.toLowerCase()">
+            <button type="button"
+              class="ml-8 text-black bg-[#d6fd51] hover:bg-[#bddd49] font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 text-center">
+              Go To {{exercises[2].muscleGroup}}
+            </button>
+          </a>
+        </div>
+      </span>
+      <img class="h-full w-full rounded-lg" src="data:image/jpg;base64,{{exercises[2].picture}}"
+        alt="{{exercises[2].name}}">
+    </div>
+
+
+
+    <div class="h-[{{exercises[6].height}}px] relative group flex flex-col min-h-44">
+      <span
+        class="w-full p-4 text-black opacity-0 group-hover:opacity-100 absolute h-full rounded-lg transition-all duration-300 backdrop-blur-lg overflow-hidden flex flex-col justify-between">
+        <h6 class="uppercase text-lg font-bold text-black">{{exercises[6].name}}</h6>
+        <div class="mb-5">
+          <div
+            class="inline-block mb-2 ms-[calc({{getMarginPercentage(exercises[6].difficulty)}}-1.25rem)] py-0.5 px-1.5 bg-[#242424] border border-[#d6fd51] text-xs font-medium text-[#d6fd51] rounded-lg">
+            {{ exercises[6].difficulty === 3 ? 'Difficult' : (exercises[6].difficulty === 2 ? 'Medium' : 'Easy') }}
+          </div>
+          <div class="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar"
+            [attr.aria-valuenow]="exercises[6].difficulty === 3 ? 75 : (exercises[6].difficulty === 2 ? 50 : 25)"
+            aria-valuemin="0" aria-valuemax="100">
+            <div
+              class="flex flex-col justify-center rounded-full overflow-hidden bg-[#d6fd51] text-xs text-white text-center whitespace-nowrap transition duration-500"
+              [style.width]="exercises[6].difficulty === 3 ? '75%' : (exercises[6].difficulty === 2 ? '50%' : '25%')">
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <mark class="px-2 text-gray-100 bg-[#d6fd51] rounded">{{exercises[6].muscleGroup}}</mark>
+          <span>Exercise</span>
+          <a [href]="'/' + exercises[6].muscleGroup.toLowerCase()">
+            <button type="button"
+              class="ml-8 text-black bg-[#d6fd51] hover:bg-[#bddd49] font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 text-center">
+              Go To {{exercises[6].muscleGroup}}
+            </button>
+          </a>
+        </div>
+      </span>
+      <img class="h-full w-full rounded-lg" src="data:image/jpg;base64,{{exercises[6].picture}}"
+        alt="{{exercises[6].name}}">
+    </div>
+
+
+
+    <div class="h-[{{exercises[10].height}}px] relative group flex flex-col min-h-44">
+      <span
+        class="w-full p-4 text-black opacity-0 group-hover:opacity-100 absolute h-full rounded-lg transition-all duration-300 backdrop-blur-lg overflow-hidden flex flex-col justify-between">
+        <h6 class="uppercase text-lg font-bold text-black">{{exercises[10].name}}</h6>
+        <div class="mb-5">
+          <div
+            class="inline-block mb-2 ms-[calc({{getMarginPercentage(exercises[10].difficulty)}}-1.25rem)] py-0.5 px-1.5 bg-[#242424] border border-[#d6fd51] text-xs font-medium text-[#d6fd51] rounded-lg">
+            {{ exercises[10].difficulty === 3 ? 'Difficult' : (exercises[10].difficulty === 2 ? 'Medium' : 'Easy') }}
+          </div>
+          <div class="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar"
+            [attr.aria-valuenow]="exercises[10].difficulty === 3 ? 75 : (exercises[10].difficulty === 2 ? 50 : 25)"
+            aria-valuemin="0" aria-valuemax="100">
+            <div
+              class="flex flex-col justify-center rounded-full overflow-hidden bg-[#d6fd51] text-xs text-white text-center whitespace-nowrap transition duration-500"
+              [style.width]="exercises[10].difficulty === 3 ? '75%' : (exercises[10].difficulty === 2 ? '50%' : '25%')">
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <mark class="px-2 text-gray-100 bg-[#d6fd51] rounded">{{exercises[10].muscleGroup}}</mark>
+          <span>Exercise</span>
+          <a [href]="'/' + exercises[10].muscleGroup.toLowerCase()">
+            <button type="button"
+              class="ml-8 text-black bg-[#d6fd51] hover:bg-[#bddd49] font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 text-center">
+              Go To {{exercises[10].muscleGroup}}
+            </button>
+          </a>
+        </div>
+      </span>
+      <img class="h-full w-full rounded-lg" src="data:image/jpg;base64,{{exercises[10].picture}}"
+        alt="{{exercises[10].name}}">
+    </div>
+  </div>
+  <div class="grid gap-4">
+    <div class="h-[{{exercises[3].height}}px] relative group flex flex-col min-h-44">
+      <span
+        class="w-full p-4 text-black opacity-0 group-hover:opacity-100 absolute h-full rounded-lg transition-all duration-300 backdrop-blur-lg overflow-hidden flex flex-col justify-between">
+        <h6 class="uppercase text-lg font-bold text-black">{{exercises[3].name}}</h6>
+        <div class="mb-5">
+          <div
+            class="inline-block mb-2 ms-[calc({{getMarginPercentage(exercises[3].difficulty)}}-1.25rem)] py-0.5 px-1.5 bg-[#242424] border border-[#d6fd51] text-xs font-medium text-[#d6fd51] rounded-lg">
+            {{ exercises[3].difficulty === 3 ? 'Difficult' : (exercises[3].difficulty === 2 ? 'Medium' : 'Easy') }}
+          </div>
+          <div class="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar"
+            [attr.aria-valuenow]="exercises[3].difficulty === 3 ? 75 : (exercises[3].difficulty === 2 ? 50 : 25)"
+            aria-valuemin="0" aria-valuemax="100">
+            <div
+              class="flex flex-col justify-center rounded-full overflow-hidden bg-[#d6fd51] text-xs text-white text-center whitespace-nowrap transition duration-500"
+              [style.width]="exercises[3].difficulty === 3 ? '75%' : (exercises[3].difficulty === 2 ? '50%' : '25%')">
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <mark class="px-2 text-gray-100 bg-[#d6fd51] rounded">{{exercises[3].muscleGroup}}</mark>
+          <span>Exercise</span>
+          <a [href]="'/' + exercises[3].muscleGroup.toLowerCase()">
+            <button type="button"
+              class="ml-8 text-black bg-[#d6fd51] hover:bg-[#bddd49] font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 text-center">
+              Go To {{exercises[3].muscleGroup}}
+            </button>
+          </a>
+        </div>
+      </span>
+      <img class="h-full w-full rounded-lg" src="data:image/jpg;base64,{{exercises[3].picture}}"
+        alt="{{exercises[3].name}}">
+    </div>
+
+
+    <div class="h-[{{exercises[7].height}}px] relative group flex flex-col min-h-44">
+      <span
+        class="w-full p-4 text-black opacity-0 group-hover:opacity-100 absolute h-full rounded-lg transition-all duration-300 backdrop-blur-lg overflow-hidden flex flex-col justify-between">
+        <h6 class="uppercase text-lg font-bold text-black">{{exercises[7].name}}</h6>
+        <div class="mb-5">
+          <div
+            class="inline-block mb-2 ms-[calc({{getMarginPercentage(exercises[7].difficulty)}}-1.25rem)] py-0.5 px-1.5 bg-[#242424] border border-[#d6fd51] text-xs font-medium text-[#d6fd51] rounded-lg">
+            {{ exercises[7].difficulty === 3 ? 'Difficult' : (exercises[7].difficulty === 2 ? 'Medium' : 'Easy') }}
+          </div>
+          <div class="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar"
+            [attr.aria-valuenow]="exercises[7].difficulty === 3 ? 75 : (exercises[7].difficulty === 2 ? 50 : 25)"
+            aria-valuemin="0" aria-valuemax="100">
+            <div
+              class="flex flex-col justify-center rounded-full overflow-hidden bg-[#d6fd51] text-xs text-white text-center whitespace-nowrap transition duration-500"
+              [style.width]="exercises[7].difficulty === 3 ? '75%' : (exercises[7].difficulty === 2 ? '50%' : '25%')">
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <mark class="px-2 text-gray-100 bg-[#d6fd51] rounded">{{exercises[7].muscleGroup}}</mark>
+          <span>Exercise</span>
+          <a [href]="'/' + exercises[7].muscleGroup.toLowerCase()">
+            <button type="button"
+              class="ml-8 text-black bg-[#d6fd51] hover:bg-[#bddd49] font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 text-center">
+              Go To {{exercises[7].muscleGroup}}
+            </button>
+          </a>
+        </div>
+      </span>
+      <img class="h-full w-full rounded-lg" src="data:image/jpg;base64,{{exercises[7].picture}}"
+        alt="{{exercises[7].name}}">
+    </div>
+    <div class="h-[{{exercises[11].height}}px] relative group flex flex-col min-h-44">
+      <span
+        class="w-full p-4 text-black opacity-0 group-hover:opacity-100 absolute h-full rounded-lg transition-all duration-300 backdrop-blur-lg overflow-hidden flex flex-col justify-between">
+        <h6 class="uppercase text-lg font-bold text-black">{{exercises[11].name}}</h6>
+        <div class="mb-5">
+          <div
+            class="inline-block mb-2 ms-[calc({{getMarginPercentage(exercises[11].difficulty)}}-1.25rem)] py-0.5 px-1.5 bg-[#242424] border border-[#d6fd51] text-xs font-medium text-[#d6fd51] rounded-lg">
+            {{ exercises[11].difficulty === 3 ? 'Difficult' : (exercises[11].difficulty === 2 ? 'Medium' : 'Easy') }}
+          </div>
+          <div class="flex w-full h-2 bg-gray-800 rounded-full overflow-hidden" role="progressbar"
+            [attr.aria-valuenow]="exercises[11].difficulty === 3 ? 75 : (exercises[11].difficulty === 2 ? 50 : 25)"
+            aria-valuemin="0" aria-valuemax="100">
+            <div
+              class="flex flex-col justify-center rounded-full overflow-hidden bg-[#d6fd51] text-xs text-white text-center whitespace-nowrap transition duration-500"
+              [style.width]="exercises[11].difficulty === 3 ? '75%' : (exercises[11].difficulty === 2 ? '50%' : '25%')">
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <mark class="px-2 text-gray-100 bg-[#d6fd51] rounded">{{exercises[11].muscleGroup}}</mark>
+          <span>Exercise</span>
+          <a [href]="'/' + exercises[11].muscleGroup.toLowerCase()">
+            <button type="button"
+              class="ml-8 text-black bg-[#d6fd51] hover:bg-[#bddd49] font-medium rounded-lg text-xs px-5 py-2.5 me-2 mb-2 text-center">
+              Go To {{exercises[11].muscleGroup}}
+            </button>
+          </a>
+        </div>
+      </span>
+      <img class="h-full w-full rounded-lg" src="data:image/jpg;base64,{{exercises[11].picture}}"
+        alt="{{exercises[11].name}}">
+    </div>
+  </div>
+</div>

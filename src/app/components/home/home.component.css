@@ -1,0 +1,49 @@
+.blursito {
+  background: #000000;
+  background: linear-gradient(to right, #000000 40%, transparent 100%);
+}
+
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* .moving-text {
+  animation: moveLeftToRight 30s linear infinite;
+  white-space: nowrap;
+} */
+
+
+@keyframes infiniteScroll {
+  from {
+    transform: translateX(0)
+  }
+
+  to {
+    transform: translateX(-50%)
+  }
+}
+
+.banner {
+  width: 100%;
+  background-color: #d6fd51;
+}
+
+.horizontal-scrolling-items {
+  display: flex;
+  font-size: 30px;
+  width: 2600px;
+  animation-name: infiniteScroll;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.horizontal-scrolling-items__item {
+  white-space: nowrap;
+}

@@ -1,0 +1,88 @@
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+
+<div class="min-w-screen h-1/3 bg-black flex items-center justify-center px-5 pt-20 mb-10">
+  <div class="bg-[#242424] text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden border border-[#d6fd51]"
+    style="max-width:1000px">
+    <div class="md:flex w-full">
+      <div class="w-full md:w-1/2 py-24 px-5 md:px-10">
+        <div class="text-center mb-10">
+          <h1 class="font-bold text-4xl text-white">LOG IN</h1>
+          <p class="text-gray-400">Enter your information to log in</p>
+        </div>
+        <div>
+          <form (ngSubmit)="submit()" #form="ngForm">
+
+            <!-- Username input -->
+            <div class="flex -mx-3">
+              <div class="w-full px-3 mb-5">
+                <label for="" class="text-xs font-semibold px-1 text-gray-400">Username</label>
+                <div class="flex">
+                  <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i
+                      class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                  <input required type="text" minlength="2" maxlength="50" pattern="[a-zA-Z0-9]+"
+                    class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#d6fd51]"
+                    placeholder="johnsito | johnsmith@example.com" name="username" [(ngModel)]="user.username"
+                    #username="ngModel">
+                </div>
+                <div *ngIf="username && username.invalid && (username.dirty || username.touched)"
+                  class="text-red-500 text-xs mt-1">
+                  <div *ngIf="username.errors && username.errors['required']">Username/Email is required.</div>
+                  <div *ngIf="username.errors && username.errors['pattern']">Invalid characters. Only letters and spaces
+                    are
+                    allowed.</div>
+                  <div *ngIf="username.errors && (username.errors['minlength'] || username.errors['maxlength'])">
+                    Username/Email must be
+                    between 2 and 50 characters.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Password input -->
+            <div class="flex -mx-3">
+              <div class="w-full px-3 mb-12">
+                <label for="" class="text-xs font-semibold px-1 text-gray-400">Password</label>
+                <div class="flex">
+                  <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i
+                      class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
+                  <input required type="password" minlength="8"
+                    class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-[#d6fd51]"
+                    placeholder="************" name="password" [(ngModel)]="user.password" #password="ngModel">
+                </div>
+                <div *ngIf="password && password.invalid && (password.dirty || password.touched)"
+                  class="text-red-500 text-xs mt-1">
+                  <div *ngIf="password.errors && password.errors['required']">Password is required.</div>
+                  <div *ngIf="password.errors && password.errors['minlength']">Password must be at least 8 characters
+                    long.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones de inicio de sesión y registro -->
+            <div class="flex items-center justify-between">
+              <button type="submit" [disabled]="form.invalid"
+                class="w-2/4 rounded-lg px-3 py-3 font-semibold bg-[#d6fd51] text-black hover:bg-[#242424] hover:text-white hover:border border-[#d6fd51]">
+                LOG IN
+              </button>
+
+              <a href="/register"
+                class="inline-flex items-center px-3 py-3 text-sm font-medium text-center text-white rounded-lg hover:bg-[#d6fd51] bg-[#242424] hover:text-black hover:bg-[#d6fd51]">
+                OR REGISTER
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9" />
+                </svg>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="w-1/2">
+        <img class="bg-cover" src="assets/login.webp">
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-error *ngIf="showErrorAlert" [error]="'Credentials entered are not correct.'" />
